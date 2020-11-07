@@ -1,0 +1,205 @@
+<div class="register-product-page sec-padding">
+  <div class="container">
+  <mat-card fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start start"  class="p-0">
+    <div fxFlex="100"   fxFlex.gt-sm="60" class="left-info-panel">
+      <div class="title">
+          <h3>Register your MyMy Product.</h3>
+		  <br/>
+	  </div>
+      <form fxLayout="row wrap">
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Serial number of the product</mat-label>
+                  <input matInput #rserialnum="ngModel" ngModel name="rserialnum" required>
+                  <mat-error *ngIf="rserialnum.invalid">Please enter a valid serial number.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-form-field class="w-100">
+				  <mat-label>Please Enter the purchase date</mat-label>
+                  <input matInput #rpurchasedate="ngModel" ngModel name="rpurchasedate" required>
+                  <mat-error *ngIf="rpurchasedate.invalid">Please enter a valid purchase date.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>First name of the buyer</mat-label>
+                  <input matInput #rfirstname="ngModel" ngModel name="rfirstname" required>
+                  <mat-error *ngIf="rfirstname.invalid">Please enter a valid first name.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Last name of the buyer</mat-label>
+                  <input matInput #rlastname="ngModel" ngModel name="rlastname" required>
+                  <mat-error *ngIf="rfirstname.invalid">Please enter a valid first name.</mat-error>
+                </mat-form-field>
+          </div>
+		   <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-form-field class="w-100">
+				  <mat-label>Please Enter the date of birth of the buyer</mat-label>
+                  <input matInput #rdateofbirth="ngModel" ngModel name="rdateofbirth" required>
+                  <mat-error *ngIf="rdateofbirth.invalid">Please enter a valid date of birth.</mat-error>
+                </mat-form-field>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Email of the buyer</mat-label>
+                  <input matInput #remail="ngModel" ngModel name="remail" required>
+                  <mat-error *ngIf="remail.invalid">Please enter a valid email.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Address Line 1 of the buyer</mat-label>
+                  <input matInput #raddressone="ngModel" ngModel name="raddressone" required>
+                  <mat-error *ngIf="raddressone.invalid">Please enter a valid address line one.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Address Line 2 of the buyer</mat-label>
+                  <input matInput #raddresstwo="ngModel" ngModel name="raddresstwo" required>
+                  <mat-error *ngIf="raddresstwo.invalid">Please enter a valid address line two.</mat-error>
+                </mat-form-field>
+          </div>
+		   <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>City</mat-label>
+                  <input matInput #rcity="ngModel" ngModel name="rcity" required>
+                  <mat-error *ngIf="rcity.invalid">Please enter a valid name of the city.</mat-error>
+                </mat-form-field>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>State</mat-label>
+                  <input matInput #rstate="ngModel" ngModel name="rstate" required>
+                  <mat-error *ngIf="rstate.invalid">Please enter a valid name of the state.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Country</mat-label>
+                  <input matInput #rcountry="ngModel" ngModel name="rcountry" required>
+                  <mat-error *ngIf="rcountry.invalid">Please enter a valid name of the country.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Country</mat-label>
+                  <input matInput #rphonenumber="ngModel" ngModel name="rphonenumber" required>
+                  <mat-error *ngIf="rcountry.invalid">Please enter a valid name of the country.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <button class="btn-project" mat-raised-button color="accent" type="submit">Register</button>
+            </div>
+          </form>
+       
+    </div>
+    <div fxFlex="100"   fxFlex.gt-sm="60" class="register-warranty-form">
+        <div class="title">
+            <h3>File your claim for your MyMy Product.</h3>
+        </div>
+		
+		<form fxLayout="row wrap">
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Serial number of the product</mat-label>
+                  <input matInput #fserialnum="ngModel" ngModel name="fserialnum" required>
+                  <mat-error *ngIf="fserialnum.invalid">Please enter a valid serial number.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-form-field class="w-100">
+				  <mat-label>Please Enter the purchase date</mat-label>
+                  <input matInput #fpurchasedate="ngModel" ngModel name="fpurchasedate" required>
+                  <mat-error *ngIf="fpurchasedate.invalid">Please enter a valid purchase date.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>First name of the buyer</mat-label>
+                  <input matInput #ffirstname="ngModel" ngModel name="ffirstname" required>
+                  <mat-error *ngIf="ffirstname.invalid">Please enter a valid first name.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Last name of the buyer</mat-label>
+                  <input matInput #flastname="ngModel" ngModel name="flastname" required>
+                  <mat-error *ngIf="ffirstname.invalid">Please enter a valid first name.</mat-error>
+                </mat-form-field>
+          </div>
+		   <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-form-field class="w-100">
+				  <mat-label>Please Enter the date of birth of the buyer</mat-label>
+                  <input matInput #fdateofbirth="ngModel" ngModel name="fdateofbirth" required>
+                  <mat-error *ngIf="fdateofbirth.invalid">Please enter a valid date of birth.</mat-error>
+                </mat-form-field>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Email of the buyer</mat-label>
+                  <input matInput #femail="ngModel" ngModel name="femail" required>
+                  <mat-error *ngIf="femail.invalid">Please enter a valid email.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Address Line 1 of the buyer</mat-label>
+                  <input matInput #faddressone="ngModel" ngModel name="faddressone" required>
+                  <mat-error *ngIf="faddressone.invalid">Please enter a valid address line one.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Address Line 2 of the buyer</mat-label>
+                  <input matInput #faddresstwo="ngModel" ngModel name="faddresstwo" required>
+                  <mat-error *ngIf="faddresstwo.invalid">Please enter a valid address line two.</mat-error>
+                </mat-form-field>
+          </div>
+		   <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>City</mat-label>
+                  <input matInput #fcity="ngModel" ngModel name="fcity" required>
+                  <mat-error *ngIf="fcity.invalid">Please enter a valid name of the city.</mat-error>
+                </mat-form-field>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>State</mat-label>
+                  <input matInput #fstate="ngModel" ngModel name="fstate" required>
+                  <mat-error *ngIf="fstate.invalid">Please enter a valid name of the state.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Country</mat-label>
+                  <input matInput #fcountry="ngModel" ngModel name="fcountry" required>
+                  <mat-error *ngIf="fcountry.invalid">Please enter a valid name of the country.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Country</mat-label>
+                  <input matInput #fphonenumber="ngModel" ngModel name="fphonenumber" required>
+                  <mat-error *ngIf="fphonenumber.invalid">Please enter a valid name of the country.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+				  <mat-label>Reason for the claim</mat-label>
+                  <textarea matInput #freasoncontent="ngModel" rows="6" ngModel name="freasoncontent" required></textarea>
+				  <mat-error *ngIf="freasoncontent.invalid">Please enter a valid reason for your claim.</mat-error>
+                </mat-form-field>
+          </div>
+		  <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <button class="btn-project" mat-raised-button color="accent" type="submit">File Your Claim</button>
+            </div> 
+          </form>
+    </div>
+  </mat-card>
+</div>
+</div>
+

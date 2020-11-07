@@ -1,0 +1,44 @@
+<mat-toolbar-row fxHide fxShow.gt-sm class="container" fxLayout="row"  fxLayout.xs="row" fxLayoutAlign="space-between center">
+  <div class="main-menu" fxLayout="row" fxHide fxShow.gt-sm>
+	<a  mat-button class="mat-button" [routerLink]="['/home/one']" routerLinkActive="router-link-active">Home</a>
+    <a  mat-button class="mat-button" [matMenuTriggerFor]="Products" (click)="openMegaMenu()">Products<mat-icon class="caret">arrow_drop_down</mat-icon></a>
+      <mat-menu #Products="matMenu" [overlapTrigger]="false" class="app-dropdown mega-menu">
+          <div fxLayout="row wrap">
+              <div fxFlex="25" fxLayout="column" class="p-1">
+                  <a mat-menu-item routerLink="/"><b>Disposable</b></a>
+                  <mat-divider></mat-divider>
+                  <a mat-menu-item routerLink="/">MyMy 1.3mgML</a>
+                  <a mat-menu-item routerLink="/">MyMy Elite</a>
+                  <a mat-menu-item routerLink="/">MyMy Drop</a>
+                  <a mat-menu-item routerLink="/">MyMy Max</a>
+                  <a mat-menu-item routerLink="/">MyMy MAX PRO</a>
+				  <a mat-menu-item routerLink="/">MyMy MINI</a>
+              </div>
+              <div fxFlex="75" class="p-1">
+                  <a mat-menu-item routerLink="/"><b>Basic Device Kit</b></a>
+                  <mat-divider></mat-divider>
+                  <button mat-menu-item>MyMy Twist Slim PEN - Gold</button>
+                  <button mat-menu-item>MyMy Twist Slim PEN - Black</button>
+                  <button mat-menu-item>MyMy Twist Slim PEN - Blue</button>
+                  <button mat-menu-item>MyMy Twist Slim PEN - Silver</button>
+				  <button mat-menu-item>MyMy Twist Slim PEN - Green</button>
+              </div>
+          </div>
+
+      </mat-menu>
+      <a  mat-button mat-button [matMenuTriggerFor]="Support" class="mat-button">Support<mat-icon class="caret">arrow_drop_down</mat-icon></a>
+      <mat-menu #Support="matMenu" [overlapTrigger]="false" class="app-dropdown">
+          <a mat-menu-item [routerLink]="['/pages/register-warranty']">Register your MyMy Product</a>
+          <a mat-menu-item [routerLink]="['/pages/register-warranty']">File your Warranty Claim</a>
+          <a mat-menu-item [routerLink]="['/pages/faq']">FAQs</a>
+      </mat-menu>
+      <a  mat-button [matMenuTriggerFor]="pages" class="mat-button">About US<mat-icon class="caret">arrow_drop_down</mat-icon></a>
+      <mat-menu #pages="matMenu" [overlapTrigger]="false" class="app-dropdown">
+        <a [routerLink]="['/pages/about']" mat-menu-item>About Us</a>
+        <a mat-menu-item [routerLink]="['/pages/contact']">Contact</a>
+		<a mat-menu-item [routerLink]="['/pages/faq']" >FAQ</a>
+    </mat-menu>
+      <a [routerLink]="['/pages/contact']" routerLinkActive="router-link-active"   mat-button class="mat-button">Wholesale Inquiries</a>
+    </div>
+</mat-toolbar-row>
+

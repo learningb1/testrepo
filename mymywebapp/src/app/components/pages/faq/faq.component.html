@@ -1,0 +1,87 @@
+<div class="faq sec-padding">
+  <div class="container">
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start start"  class="p-0">
+        <div fxFlex="100" fxFlex.gt-sm="50" class="questions">
+            <div class="faq-wrap">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span>How do you I register my MyMy Twist Slim Pen?</span>
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <p></p>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                              <span>How do I file my warranty claim for my MyMy Twist Slim Pen?</span>
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.
+							<img style="width:250px;height:125px;" src="assets/images/WarrantyCard.png">
+                          </p>
+                      </mat-expansion-panel>
+                      <mat-expansion-panel>
+                          <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <span>How do I get bulk pricing on my orders?</span>
+                            </mat-panel-title>
+                          </mat-expansion-panel-header>
+                          <p>
+                              Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.
+                            </p>
+                        </mat-expansion-panel>
+                  </mat-accordion>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="50" class="faq-form">
+            <div class="text-wrap">
+              <div class="title">
+                  <h3>If you have more questions/queries, please contact us.</h3>
+              </div>
+                <p></p>
+                    <form fxLayout="row wrap">
+                        <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                            <mat-form-field class="w-100">
+                                <input matInput placeholder="Your Name (required)" #name="ngModel" ngModel name="name" required>
+                                <mat-error *ngIf="name.invalid">Please enter a valid name</mat-error>
+                              </mat-form-field>
+                        </div>
+                        <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                            <mat-form-field class="w-100">
+                                <input matInput placeholder="Your Email (required)" #email="ngModel" ngModel name="email" required>
+                                <mat-error *ngIf="email.invalid">Please enter a valid email</mat-error>
+                              </mat-form-field>
+                        </div>
+                        <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                            <mat-form-field class="w-100">
+                                <input matInput placeholder="Subject" #subject="ngModel" ngModel name="subject" required>
+                                <mat-error *ngIf="subject.invalid">Please enter a valid subject</mat-error>
+                              </mat-form-field>
+                        </div>
+						<div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                            <mat-form-field class="w-100">
+                                <input matInput placeholder="Message" #message="ngModel" ngModel name="message" required>
+                                <mat-error *ngIf="message.invalid">Please enter a valid message</mat-error>
+                              </mat-form-field>
+                        </div>
+						
+						<div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+						  <mat-form-field class="w-100">
+							  <textarea placeholder="Ask about our Twist Slim Pen." #postquerycontent="ngModel" matInput rows="6" ngModel name="postquerycontent" required></textarea>
+							  <mat-error *ngIf="message.invalid">Please ask about our Twist Slim Vaping Pen.</mat-error>
+							</mat-form-field>
+						</div>
+
+                        <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                            <button class="btn-project" mat-raised-button color="accent" type="submit">REQUEST A QUOTE</button>
+                          </div>
+                        </form>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</div>
