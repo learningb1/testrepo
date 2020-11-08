@@ -1,0 +1,17 @@
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\productidlookupapi.Test.deps.json
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\productidlookupapi.Test.runtimeconfig.json
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\productidlookupapi.Test.runtimeconfig.dev.json
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\productidlookupapi.Test.dll
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\productidlookupapi.Test.pdb
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\obj\Debug\netcoreapp2.1\productidlookupapi.Test.csprojAssemblyReference.cache
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\obj\Debug\netcoreapp2.1\productidlookupapi.Test.csproj.CoreCompileInputs.cache
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\obj\Debug\netcoreapp2.1\productidlookupapi.Test.AssemblyInfoInputs.cache
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\obj\Debug\netcoreapp2.1\productidlookupapi.Test.AssemblyInfo.cs
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\obj\Debug\netcoreapp2.1\productidlookupapi.Test.dll
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\obj\Debug\netcoreapp2.1\productidlookupapi.Test.pdb
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\productidlookup.dll
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\bin\Debug\netcoreapp2.1\productidlookup.pdb
+C:\GIT\TR1\testrepo\api\apisln\test\productidlookupapi.Test\obj\Debug\netcoreapp2.1\productidlookupapi.Test.csproj.CopyComplete
