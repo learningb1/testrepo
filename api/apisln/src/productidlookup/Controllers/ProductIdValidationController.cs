@@ -20,7 +20,16 @@ namespace productidlookup.Controllers
         {
             bool retval = ValidateProductId(id);
 
-            return Ok(retval.ToString());
+            if (retval)
+            {
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
+
+            
         }
 
         private bool ValidateProductId(string productId)
