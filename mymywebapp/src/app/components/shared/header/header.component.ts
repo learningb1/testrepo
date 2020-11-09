@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
     { name:'United States', image: 'assets/images/flags/us.png' }
   ]
   public flag:any;
-  private inputVar: string;
+  public inputVar: string;
 
   products: Product[];
 
