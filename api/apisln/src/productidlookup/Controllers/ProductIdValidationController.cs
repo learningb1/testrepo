@@ -16,11 +16,11 @@ namespace productidlookup.Controllers
     {
         // GET api/values
         [HttpGet("{id}")]
-        public ActionResult<string> Get(String id)
+        public ActionResult Get(String id)
         {
             bool retval = ValidateProductId(id);
 
-            return retval.ToString();
+            return Ok(retval.ToString());
         }
 
         private bool ValidateProductId(string productId)
