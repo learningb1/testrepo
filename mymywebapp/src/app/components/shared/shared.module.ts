@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from "@angular/router";
 
@@ -65,6 +66,7 @@ import { FooterTwoComponent } from './footer-two/footer-two.component';
   imports: [
     CommonModule,
     RouterModule,
+	FormsModule,
     MatButtonModule,
     MatSnackBarModule,
     MatToolbarModule,
