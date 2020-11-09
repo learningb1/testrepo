@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Serialization;
 
 namespace productidlookup.Controllers
 {
@@ -16,17 +17,17 @@ namespace productidlookup.Controllers
     {
         // GET api/values
         [HttpGet("{id}")]
-        public ActionResult Get(String id)
+        public JsonResult Get(String id)
         {
             bool retval = ValidateProductId(id);
 
             if (retval)
             {
-                return Ok();
+                return new JsonResult(new { result = "ok" });
             }
             else
             {
-                return NotFound();
+                return new JsonResult(new { result = "notfound" });
             }
 
             
