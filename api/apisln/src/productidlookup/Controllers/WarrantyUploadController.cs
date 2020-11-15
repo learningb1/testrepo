@@ -31,7 +31,7 @@ namespace productidlookup.Controllers
 
 
             string details = 
-                        System.IO.File.ReadAllText("private.p12");
+                        System.IO.File.ReadAllText(@"D:\home\site\wwwroot\" + "private.p12");
 
 
             using(MemoryStream receiptimage = ConvertFromBase64(data.ReceiptImageString))
@@ -164,7 +164,7 @@ namespace productidlookup.Controllers
                                           string serialnumberlink)
         {
             string retval = string.Empty;
-            retval = System.IO.File.ReadAllText(filename);
+            retval = System.IO.File.ReadAllText(@"D:\home\site\wwwroot\" + filename);
             
             retval = retval.Replace("NONE-LAST-NAME", model.LastName);
             retval = retval.Replace("NONE-EMAIL-ADDRESS", model.EmailAddress);

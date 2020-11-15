@@ -33,14 +33,7 @@ namespace productidlookup.Controllers
             
         }
 
-        [HttpPost]
-        public JsonResult Post()
-        {
-            string details = System.IO.File.ReadAllText("private.p12");
-            
-             return new JsonResult(new { result = details });
-        }
-
+       
         public static bool ValidateProductId(string productId)
         {
             bool returnval = false;
