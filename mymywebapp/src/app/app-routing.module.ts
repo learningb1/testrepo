@@ -36,7 +36,27 @@ const appRoutes: Routes = [
   {
     path: '**',
     redirectTo: 'home/one'
+  },
+  {
+    path: 'home/one',
+    component: MainComponent,
+    children: [
+      {
+        path: 'home',
+        loadChildren: () => import('./components/shop/shop.module').then(m => m.ShopModule)
+      },
+      {
+        path: 'pages',
+        loadChildren: () => import('./components/pages/pages.module').then(m => m.PagesModule)
+
+      },
+      {
+        path: 'blog',
+        loadChildren: () => import('./components/blog/blog.module').then(m => m.BlogModule)
+      }
+    ]
   }
+
 ]; 
 
 @NgModule({
