@@ -22,13 +22,15 @@ import {MatListModule} from '@angular/material/list';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MatTableModule } from '@angular/material';
+import { MatNativeDateModule, MatTableModule } from '@angular/material';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
+import {ProductregistrationService} from './services/productregistration.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BannersComponent } from './banners/banners.component';
 import { HeaderTwoComponent } from './header-two/header-two.component';
@@ -85,6 +87,8 @@ import { FooterTwoComponent } from './footer-two/footer-two.component';
     MatTabsModule,
     MatDividerModule,
     MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     FlexLayoutModule,
   ],
   exports: [
@@ -105,6 +109,8 @@ import { FooterTwoComponent } from './footer-two/footer-two.component';
     MatSidenavModule,
     MatSelectModule,
     MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatDividerModule,
     MatCardModule,
     OrderByPipe,
@@ -128,7 +134,8 @@ import { FooterTwoComponent } from './footer-two/footer-two.component';
   ],
   providers: [
     ProductService,
-    CartService
+    CartService,
+    ProductregistrationService
   ]
 })
 export class SharedModule {}

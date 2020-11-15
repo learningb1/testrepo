@@ -16,6 +16,11 @@ import { MainComponent } from './components/main/main.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ShopModule } from './components/shop/shop.module';
 import { SharedModule } from './components/shared/shared.module';
+import { MatButtonModule,
+         MatNativeDateModule,
+         MatFormFieldModule,
+         MatInputModule} from '@angular/material';
+import {MatDatepickerModule} from '@angular/material/datepicker';         
 
 
 @NgModule({
@@ -37,7 +42,12 @@ import { SharedModule } from './components/shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgxImgZoomModule
+    NgxImgZoomModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
