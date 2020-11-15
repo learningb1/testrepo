@@ -45,9 +45,9 @@ namespace productidlookup
 
             string[] scopes = new string[] { DriveService.Scope.Drive };
             var certificate = 
-                    new X509Certificate2(@"D:/home/site/wwwroot/private.p12",
+                    new X509Certificate2(@"private.p12",
                                         "notasecret",
-                                        X509KeyStorageFlags.Exportable);
+                                        X509KeyStorageFlags.MachineKeySet);
             credential = new ServiceAccountCredential(
                 new ServiceAccountCredential.Initializer("mymy-test@quickstart-1605114865611.iam.gserviceaccount.com")
                 {
