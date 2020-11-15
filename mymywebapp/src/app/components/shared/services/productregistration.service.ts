@@ -10,7 +10,7 @@ export class ProductregistrationService {
 
   rimgdata : string;
   rimgabspath: string;
-  readonly rooturl = "https://localhost:5001/api/";
+  readonly rooturl = "https://mymyvape.azurewebsites.net/api/";
   registrationdetail : registrationuploadmodel;
   warrantydetail: warrantyupload;
   
