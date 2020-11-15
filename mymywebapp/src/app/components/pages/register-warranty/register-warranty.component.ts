@@ -1022,7 +1022,7 @@ export class RegisterWarrantyComponent implements OnInit {
   wsubmissionstatusstring = "";
 
 
-  constructor(private regservice: ProductregistrationService) {
+  constructor(public regservice: ProductregistrationService) {
 
     this.regservice.registerform.patchValue({rfilepath: null});
     this.regservice.rimgabspath = "";
