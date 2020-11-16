@@ -62,6 +62,59 @@ namespace productidlookup
 
         }
 
+        public void UpdateQueriesSheet(string name,
+                                               string emailaddress,
+                                               string phonenumber,
+                                               string subject,
+                                               string message,
+                                               string requesttype)
+        {
+             SheetsService sheetsService = new SheetsService(new BaseClientService.Initializer
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "Google-SheetsSample/0.1",
+            });
+
+            var range = string.Empty;
+            
+            if (requesttype.Equals("Wholesalers"))
+            {
+                range = @"WholesalerEnquiries!A:F";
+            }
+            else
+            {
+                range = @"CustomerQueries!A:F";
+            }
+            
+            
+            var valueRange = new ValueRange();
+
+            var oblist = new List<object>()
+            {
+                String.IsNullOrEmpty(name) ? "": name,
+                String.IsNullOrEmpty(emailaddress)? "" : emailaddress,
+                String.IsNullOrEmpty(phonenumber)? "" : phonenumber,
+                String.IsNullOrEmpty(subject)? "" : subject,
+                String.IsNullOrEmpty(message)? "" : message,
+                DateTime.Now.ToShortDateString()
+          };
+      
+            
+            valueRange.Values = new List<IList<object>> { oblist };
+
+
+            Google.Apis.Sheets.v4.Data.ValueRange requestBody = 
+                                new Google.Apis.Sheets.v4.Data.ValueRange();
+
+            var appendRequest = 
+                sheetsService.Spreadsheets.Values.Append(valueRange, _registrationsheetid, range);
+            appendRequest.ValueInputOption = 
+                SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
+
+            // To execute asynchronously in an async method, replace `request.Execute()` as shown:
+            Google.Apis.Sheets.v4.Data.AppendValuesResponse response = appendRequest.Execute();
+        }
+
         public void UpdateRegistrationSheet(string SerialNumber,
             string PurchaseDate,
             string FirstName,

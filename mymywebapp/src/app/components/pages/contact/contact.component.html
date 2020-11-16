@@ -34,33 +34,50 @@
         <div class="title">
             <h3>Contact us</h3>
         </div>
-        <form fxLayout="row wrap">
+        <form fxLayout="row wrap" [formGroup]="contactrequestservice.contactrequestform">
           <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
               <mat-form-field class="w-100">
-                  <input matInput placeholder="Your Name (required)" #name="ngModel" ngModel name="name" required>
-                  <mat-error *ngIf="name.invalid">Please enter a valid message</mat-error>
+                  <input matInput placeholder="Your Name (required)" formControlName="Name" required>
+                  <mat-error>Please enter a valid message</mat-error>
                 </mat-form-field>
           </div>
           <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
               <mat-form-field class="w-100">
-                  <input matInput placeholder="Your Email (required)" #email="ngModel" ngModel name="email" required>
-                  <mat-error *ngIf="email.invalid">Please enter a valid message</mat-error>
+                  <input matInput placeholder="Your Email (required)" formControlName="EmailAddress" required>
+                  <mat-error>Please enter valid EmailAddress</mat-error>
+                </mat-form-field>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Your Phone Number (required)" formControlName="PhoneNumber" required>
+                <mat-error>Please enter valid Phone Number</mat-error>
+              </mat-form-field>
+        </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+                  <input matInput placeholder="Subject" formControlName="Subject"  required>
+                  <mat-error>Please enter a valid Subject. Serious Enquiries Only.</mat-error>
                 </mat-form-field>
           </div>
           <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
               <mat-form-field class="w-100">
-                  <input matInput placeholder="Subject" #subject="ngModel" ngModel name="subject" required>
-                  <mat-error *ngIf="subject.invalid">Please enter a valid message</mat-error>
+                  <textarea placeholder="Post content" matInput rows="10" formControlName="Message" required></textarea>
+                  <mat-error>Please enter a valid Message. Serious Enquiries Only.</mat-error>
                 </mat-form-field>
           </div>
-          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-              <mat-form-field class="w-100">
-                  <textarea placeholder="Post content" matInput rows="6" ngModel name="content" required></textarea>
-                </mat-form-field>
-          </div>
-          <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-              <button class="btn-project" mat-raised-button color="accent" type="submit">Send</button>
+            <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <button class="btn-project" 
+                      mat-raised-button color="accent" 
+                      type="submit" 
+                      [class.spinner]="csubmitbuttonloading" 
+                      [disabled]="contactrequestservice.contactrequestform.invalid"
+                      (click)="UploadContactQueryRequest()">Send</button>
             </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1" [hidden]="!cshowsubmitstatus">
+              <mat-label>Contact Request Status: {{csubmissionstatusstring}}</mat-label>
+         </div>
+    
+
           </form>
     </div>
   </mat-card>
