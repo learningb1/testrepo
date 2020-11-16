@@ -43,8 +43,10 @@
                 </mat-menu>
                 </div>
               </div>
-              <div class="widgets-left" fxLayout="row">
 
+              <!--
+              <div class="widgets-left" fxLayout="row">
+                
                 <div class="widget-text">
                   <a fxShow="false" fxShow.gt-xs [routerLink]="['/pages/wishlist']" routerLinkActive="router-link-active" ><mat-icon class="mat-icon-lg mat-icon material-icons mr-10">favorite_border</mat-icon> WISHLIST</a>
                 </div>
@@ -55,7 +57,7 @@
                     <a fxShow="false" fxShow.gt-xs [routerLink]="['/pages/my-account']" routerLinkActive="router-link-active" ><mat-icon>person</mat-icon>My Account</a>
                   </div>
               </div>
-
+              -->
 
 
 
@@ -63,13 +65,14 @@
 
       </mat-toolbar>
   <!--<app-header *ngIf="url == '/home/one' || url == '/home/three' && url != '/home/two' && url != '/home/four' || router.url.includes('pages') || router.url.includes('products') || router.url.includes('blog') || router.url.includes('product')"></app-header> -->
-  <app-header *ngIf="url != '/home/two' && url != '/home/four' || router.url.includes('pages') || router.url.includes('products') || router.url.includes('blog') || router.url.includes('product')"></app-header>
-  <app-header-two *ngIf="url == '/home/two'  "></app-header-two>
+  <app-header *ngIf="url != '/home/four' || router.url.includes('pages') || router.url.includes('products') || router.url.includes('blog') || router.url.includes('product')"></app-header>
+  <!--<app-header-two *ngIf="url == '/home/two'  "></app-header-two>-->
   <app-header-three *ngIf="url == '/home/four' || url == '/home/four'"></app-header-three>
   <app-header-four *ngIf="url == '/home/five' || url == '/home/five'"></app-header-four>
   <router-outlet></router-outlet>
 
-  <app-footer *ngIf="url != '/home/five'"></app-footer>
-  <app-footer-two *ngIf="url == '/home/five'"></app-footer-two>
+  <!--<app-footer *ngIf="url != '/home/five'"></app-footer>-->
+  <!--<app-footer-two *ngIf="url == '/home/five'"></app-footer-two>-->
+  <app-footer-two></app-footer-two>
 
 </mat-sidenav-container>
