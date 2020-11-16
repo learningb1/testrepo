@@ -42,43 +42,51 @@
                   <h3>If you have more questions/queries, please contact us.</h3>
               </div>
                 <p></p>
-                    <form fxLayout="row wrap">
-                        <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-                            <mat-form-field class="w-100">
-                                <input matInput placeholder="Your Name (required)" #name="ngModel" ngModel name="name" required>
-                                <mat-error *ngIf="name.invalid">Please enter a valid name</mat-error>
-                              </mat-form-field>
-                        </div>
-                        <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-                            <mat-form-field class="w-100">
-                                <input matInput placeholder="Your Email (required)" #email="ngModel" ngModel name="email" required>
-                                <mat-error *ngIf="email.invalid">Please enter a valid email</mat-error>
-                              </mat-form-field>
-                        </div>
-                        <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-                            <mat-form-field class="w-100">
-                                <input matInput placeholder="Subject" #subject="ngModel" ngModel name="subject" required>
-                                <mat-error *ngIf="subject.invalid">Please enter a valid subject</mat-error>
-                              </mat-form-field>
-                        </div>
-						<div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-                            <mat-form-field class="w-100">
-                                <input matInput placeholder="Message" #message="ngModel" ngModel name="message" required>
-                                <mat-error *ngIf="message.invalid">Please enter a valid message</mat-error>
-                              </mat-form-field>
-                        </div>
-						
-						<div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-						  <mat-form-field class="w-100">
-							  <textarea placeholder="Ask about our Twist Slim Pen." #postquerycontent="ngModel" matInput rows="6" ngModel name="postquerycontent" required></textarea>
-							  <mat-error *ngIf="message.invalid">Please ask about our Twist Slim Vaping Pen.</mat-error>
-							</mat-form-field>
-						</div>
-
-                        <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-                            <button class="btn-project" mat-raised-button color="accent" type="submit">REQUEST A QUOTE</button>
-                          </div>
-                        </form>
+                <form fxLayout="row wrap" [formGroup]="contactrequestservice.contactrequestform">
+                  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                      <mat-form-field class="w-100">
+                          <input matInput placeholder="Your Name (required)" formControlName="Name" required>
+                          <mat-error>Please enter a valid message</mat-error>
+                        </mat-form-field>
+                  </div>
+                  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                      <mat-form-field class="w-100">
+                          <input matInput placeholder="Your Email (required)" formControlName="EmailAddress" required>
+                          <mat-error>Please enter valid EmailAddress</mat-error>
+                        </mat-form-field>
+                  </div>
+                  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Your Phone Number (required)" formControlName="PhoneNumber" required>
+                        <mat-error>Please enter valid Phone Number</mat-error>
+                      </mat-form-field>
+                </div>
+                  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                      <mat-form-field class="w-100">
+                          <input matInput placeholder="Subject" formControlName="Subject"  required>
+                          <mat-error>Please enter a valid Subject. Serious Enquiries Only.</mat-error>
+                        </mat-form-field>
+                  </div>
+                  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                      <mat-form-field class="w-100">
+                          <textarea placeholder="Post content" matInput rows="10" formControlName="Message" required></textarea>
+                          <mat-error>Please enter a valid Message. Serious Enquiries Only.</mat-error>
+                        </mat-form-field>
+                  </div>
+                    <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                      <button class="btn-project" 
+                              mat-raised-button color="accent" 
+                              type="submit" 
+                              [class.spinner]="fsubmitbuttonloading" 
+                              [disabled]="contactrequestservice.contactrequestform.invalid"
+                              (click)="UploadContactQueryRequest()">Send</button>
+                    </div>
+                    <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1" [hidden]="!fshowsubmitstatus">
+                      <mat-label>Contact Request Status: {{fsubmissionstatusstring}}</mat-label>
+                 </div>
+            
+        
+                  </form>
             </div>
         </div>
     </div>

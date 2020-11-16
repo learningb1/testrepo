@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
   cshowsubmitstatus = false;
   csubmissionstatusstring = "";
   constructor(public contactrequestservice: ContactRequestService) {
-    contactrequestservice.contactrequestform.patchValue({RequestSource: "ContactQuery"});
+    contactrequestservice.contactrequestform.patchValue({RequestSource: "Wholesalers"});
 
   }
 
