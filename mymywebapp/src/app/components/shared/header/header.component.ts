@@ -10,6 +10,8 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import {ProductIdLookupResults} from '../../../productidlookupresult';
 
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -28,15 +30,18 @@ export class HeaderComponent implements OnInit {
 
   products: Product[];
 
-  private getprod
+  productidstatus: string;
+
+  private getprod;
+
 
   indexProduct: number;
   shoppingCartItems: CartItem[] = [];
   public pid : ProductIdLookupResults;
 
-  constructor(private cartService: CartService, private mymyapiService: MymyapiService) {
+  constructor(private cartService: CartService, public mymyapiService: MymyapiService) {
     this.cartService.getItems().subscribe(shoppingCartItems => this.shoppingCartItems = shoppingCartItems);
-    
+    let productidstatus = "Enter Product Serial Number..."
   }
 
   ngOnInit() {
@@ -58,7 +63,7 @@ export class HeaderComponent implements OnInit {
     
     let pidval: string = this.inputVar;
 
-    this.inputVar = "Enter Product Id ...";
+    this.inputVar = "Checking ...";
     
     this.mymyapiService.getProductIdLookupAsync(this.callBackProductIdLookUp, pidval);
 
@@ -76,6 +81,36 @@ export class HeaderComponent implements OnInit {
     {
       alert(prdidval + " is not a valid product serial number"); 
     }
+  }
+
+  public validateProductIdNew()
+  {
+
+    let pid: string = "";
+
+    pid = this.productidstatus;
+        
+    this.productidstatus = "Checking ...";
+    
+    this.mymyapiService.getProductIdLookupNew(pid).subscribe(
+      res =>{
+              let result1: string = "";
+              result1 = res['result'];
+              if (result1 === 'ok')
+              {
+                this.productidstatus = "Valid Serial Number";  
+              }
+              else
+              {
+                this.productidstatus = "Invalid Serial Number";
+              }
+          
+      },
+      err => {
+        this.productidstatus = "Invalid Serial Number";
+      }
+    );
+
   }
 
   

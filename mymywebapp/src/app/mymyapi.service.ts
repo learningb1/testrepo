@@ -25,6 +25,12 @@ export class MymyapiService {
       );
    }
 
+
+   public getProductIdLookupNew(productId: string)
+   {
+      return this.http.get("http://mymyvape.azurewebsites.net/api/ProductIdValidation/" + productId);
+   }
+
   
    
 }

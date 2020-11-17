@@ -3,16 +3,25 @@
     <div class="logo"><a [routerLink]="['/home/one']" routerLinkActive="router-link-active" ><img src="assets/images/mymylogo-2.png"></a></div>
 	<div class="call-bucket-wrap" fxLayout="row" fxLayout.sm="row" fxLayoutAlign="center center" >
 		<div class="info-text">
-              <h4>MyMy Vaping!! Just the best batteries in town baby!!</h4>
+              <h4>MyMy Vaping!! Just the best batteries!!</h4>
          </div>
 	</div>
 	<div fxflexoffset.gt-sm="10"  fxFlex class="search-form">
-        <form class="search-form" fxLayout="row">
-          <div class="form-wrap">
-             <input matInput placeholder="Enter Product Id.." [(ngModel)]="inputVar"  name="inputVar1">
+        <!--<form class="search-form" fxLayout="row">
+          //<div class="form-wrap">
+             <input matInput placeholder="Enter Product Serial Number.." [(ngModel)]="inputVar"  name="inputVar1">
              <button class="btn-search" (click)="validateProductId()">Check Product Id</button>
           </div>
+        </form> -->
+
+        <form class="search-form" fxLayout="row">
+          <div class="form-wrap">
+             <input matInput placeholder="Enter Product Serial Number.." [(ngModel)]="productidstatus"  name="productidstatus">
+             <button class="btn-search" (click)="validateProductIdNew()">Check Product Id</button>
+          </div>
         </form>
+
+
        </div>
 	
     <div class="call-bucket-wrap" fxLayout="row" fxLayout.sm="row" fxLayoutAlign="center center" >
