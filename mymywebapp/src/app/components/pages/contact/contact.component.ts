@@ -44,6 +44,8 @@ export class ContactComponent implements OnInit {
 
   UploadContactQueryRequest() : void
   {
+
+    this.contactrequestservice.contactrequestform.patchValue({RequestSource: "Wholesalers"});
     if (this.contactrequestservice.contactrequestform.invalid)
     {
         this.SetCSubmissionFailureStatus("Please the contact information entered. Some of it is invalid.")

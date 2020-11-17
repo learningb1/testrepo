@@ -43,6 +43,8 @@ export class FaqComponent implements OnInit {
 
   UploadContactQueryRequest() : void
   {
+    this.contactrequestservice.contactrequestform.patchValue({RequestSource: "ContactQuery"});
+
     if (this.contactrequestservice.contactrequestform.invalid)
     {
         this.SetFSubmissionFailureStatus("Please the contact information entered. Some of it is invalid.")
