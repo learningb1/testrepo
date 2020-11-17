@@ -18,7 +18,7 @@ export class MymyapiService {
    public getProductIdLookupAsync(callBackProductIdLookUp: Function, productId: string): void
    {
     this.productId = productId;
-      this.http.get<ProductIdLookupResults>("http://mymyvape.azurewebsites.net/api/ProductIdValidation/" + productId).toPromise().then(data=>{
+      this.http.get<ProductIdLookupResults>("https://mymyvape.azurewebsites.net/api/ProductIdValidation/" + productId).toPromise().then(data=>{
         this.pidLkUpResult = data;
         callBackProductIdLookUp(this.pidLkUpResult,  this.productId);
       }
