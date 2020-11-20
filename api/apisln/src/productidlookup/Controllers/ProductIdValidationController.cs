@@ -36,29 +36,43 @@ namespace productidlookup.Controllers
        
         public static bool ValidateProductId(string productId)
         {
-            bool returnval = false;
-            using(SqlConnection connection = DBHelper.GetConnection())
-            {
-                string sql = "[dbo].[ValidateProductId]";
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.Add("@pProductIdCode", SqlDbType.VarChar).Value = productId;
-                        SqlParameter retval = new SqlParameter("@pStatus", SqlDbType.Bit);
-                        retval.Direction = ParameterDirection.Output;
-                        command.Parameters.Add(retval);
-                        command.ExecuteNonQuery();
-                        int ret = Convert.ToUInt16(command.Parameters["@pStatus"].Value);
-                        if (ret > 0)
-                        {
-                            returnval = true;
-                        }
+            // bool returnval = false;
+            // using(SqlConnection connection = DBHelper.GetConnection())
+            // {
+            //     string sql = "[dbo].[ValidateProductId]";
+            //     connection.Open();
+            //     using (SqlCommand command = new SqlCommand(sql, connection))
+            //         {
+            //             command.CommandType = CommandType.StoredProcedure;
+            //             command.Parameters.Add("@pProductIdCode", SqlDbType.VarChar).Value = productId;
+            //             SqlParameter retval = new SqlParameter("@pStatus", SqlDbType.Bit);
+            //             retval.Direction = ParameterDirection.Output;
+            //             command.Parameters.Add(retval);
+            //             command.ExecuteNonQuery();
+            //             int ret = Convert.ToUInt16(command.Parameters["@pStatus"].Value);
+            //             if (ret > 0)
+            //             {
+            //                 returnval = true;
+            //             }
                         
-                    }     
+            //         }     
+            // }
+
+            // return returnval;
+
+            if (String.IsNullOrEmpty(productId))
+            {
+                return false;
             }
 
-            return returnval;
+            if (productId.Length < 6)
+            {
+                return false;
+            }
+
+            DriveApiService service = new DriveApiService();
+
+            return service.Search(productId);
 
         }
     }
