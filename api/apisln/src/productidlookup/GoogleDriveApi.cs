@@ -203,6 +203,49 @@ namespace productidlookup
 
         }
 
+        public bool Search(string productid)
+        {
+            SheetsService sheetsService = new SheetsService(new BaseClientService.Initializer
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "Google-SheetsSample/0.1",
+            });
+
+            var range = @"ProductIdLookup!A1";
+            var valueRange = new ValueRange();
+
+            string searchstring = "=MATCH(\"#-#$\",ProductIds!A:A, 0)";
+
+            searchstring = searchstring.Replace("#-#$", productid.Trim());
+
+            var oblist = new List<object>()
+                            { searchstring};
+            valueRange.Values = new List<IList<object>> { oblist };
+
+            Google.Apis.Sheets.v4.Data.ValueRange requestBody =
+                               new Google.Apis.Sheets.v4.Data.ValueRange();
+
+            var appendRequest =
+                sheetsService.Spreadsheets.Values.Append(valueRange, _registrationsheetid, range);
+            appendRequest.ValueInputOption =
+                SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
+
+            // To execute asynchronously in an async method, replace `request.Execute()` as shown:
+            Google.Apis.Sheets.v4.Data.AppendValuesResponse response = 
+                                    appendRequest.Execute();
+
+            string query = response.Updates.UpdatedRange;
+
+            SpreadsheetsResource.ValuesResource.GetRequest getrequest = 
+                    sheetsService.Spreadsheets.Values.Get(_registrationsheetid, query);
+
+            ValueRange r = getrequest.Execute();
+            object s = r.Values[0][0];
+
+            return !(s as string).Contains("#");
+
+        }
+
 
         public void UpdateWarrantyClaimSheet(string SerialNumber,
             string PurchaseDate,
