@@ -106,7 +106,7 @@
                   </tr>
                 </thead>
                 <tbody id="table-compare">
-                  <tr *ngFor="let StateRegistration of wholesalerform.controls.StateRegistrations.controls; let i=index"  [formGroupName]="i" >
+                  <tr *ngFor="let StateRegistration of wholesalerform.get('StateRegistrations')['controls']; let i=index"  [formGroupName]="i" >
                     <td>
                       <button class="btn-project-del" 
                               mat-icon-button type="button" 
