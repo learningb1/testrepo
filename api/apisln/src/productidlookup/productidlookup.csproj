@@ -66,6 +66,23 @@
     <None Update="ContactRequestTemplate.htm" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Update="WholesalerRequestTemplate.htm" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="WholesalerRequestTemplate.htm" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="OwnerWholesalerRequestTemplate.htm" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="OwnerWholesalerRequestTemplate.htm" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Google.Apis.Drive.v3" Version="1.49.0.2117" />
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.49.0.2134" />

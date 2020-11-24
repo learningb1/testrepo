@@ -13,7 +13,7 @@
      - Home footer section styles
 * 3. HOME-2 STYLES
      - Carousel styles
-     - Header-2 styles
+     - Header-2 stylesw-100
      - Info bar styles
      - Shopping widget styles
      - Home-2 product section styles
@@ -308,6 +308,11 @@ width: 100% !important;
   color: $theme-main-dark !important;
   }
 
+  .btn-project-del {
+    background: $theme-main !important;
+    color: $theme-main-dark !important;
+    }
+  
 
 
 
@@ -4807,6 +4812,9 @@ font-weight: 400;
     .w-100 {
       width: 100% !important;
     }
+    .w-50 {
+      width: 50% !important;
+    }
     .mat-form-field {
       caret-color: $theme-main !important;
       font-size: 14px !important;
@@ -4820,6 +4828,91 @@ font-weight: 400;
       }
   }
 }
+
+.contact-page {
+  .table-responsive {
+    display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+    table {
+      width: 100%;
+      border: 1px solid $grey2;
+      thead {
+        .th-wholesaler {
+          td {
+            padding: 15px;
+            vertical-align: top;
+            border-bottom: 1px solid $grey2;
+            border-top: 1px solid $grey2;
+            border-right: 1px solid $grey2;
+            background: $gray-lighter;
+            font-weight: 600;
+              font-size: 14px;
+          }
+          a {
+            cursor: pointer;
+          }
+        }
+      }
+      tbody {
+        td {
+          padding: 15px;
+          vertical-align: top;
+          border-bottom: 1px solid $grey2;
+          border-top: 1px solid $grey2;
+          border-right: 1px solid $grey2;
+          //background: $gray-lighter;
+          font-weight: 600;
+            font-size: 14px;
+        }
+        tr {
+
+          th {
+            padding: 15px;
+            vertical-align: top;
+            border-bottom: 1px solid $grey2;
+            border-top: 1px solid $grey2;
+            border-right: 1px solid $grey2;
+            background: $gray-lighter;
+            text-align: left;
+          }
+          .salestaxid {
+            width: 15%;
+            font-size: 14px;
+          }
+          td {
+            .description-compare {
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+  img.img-fluid.mb-4 {
+    max-width: 100px;
+  }
+  .empty-cart-cls {
+    h4 {
+      font-weight: 500;
+      color: $grey5;
+    }
+    h3 {
+      text-align: center;
+      }
+  }
+}
+
+
+.contact-page .table-responsive .table tbody tr td, .contact-page .table-responsive .table tbody tr th {
+  padding: 15px;
+  vertical-align: top;
+  border-top: 1px solid $grey2;
+}
+
 
 
 /***************************************

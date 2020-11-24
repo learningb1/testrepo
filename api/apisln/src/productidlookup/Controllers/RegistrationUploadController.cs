@@ -161,7 +161,7 @@ namespace productidlookup.Controllers
             return retval;
         }
 
-        private MemoryStream ConvertFromBase64(string base64encodedstring)
+        public static MemoryStream ConvertFromBase64(string base64encodedstring)
         {
             MemoryStream stream;
 

@@ -10,6 +10,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { FaqComponent } from './faq/faq.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RegisterWarrantyComponent } from './register-warranty/register-warranty.component';
+import { WholesalersComponent } from './wholesalers/wholesalers.component';
 
 
 
@@ -25,8 +26,9 @@ const routes: Routes = [
       { path: 'wishlist', component: WishlistComponent },
       { path: 'compare', component: CompareComponent },
       { path: 'my-account', component: MyAccountComponent },
-	  { path: 'register-warranty', component: RegisterWarrantyComponent },
+	    { path: 'register-warranty', component: RegisterWarrantyComponent },
       { path: 'error', component: ErrorPageComponent },
+      { path: 'wholesalers', component: WholesalersComponent },
     ]
   }
 ];

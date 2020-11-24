@@ -1,0 +1,185 @@
+<div class="contact-page sec-padding">
+    <div class="container">
+    <mat-card fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start start"  class="p-0">
+      <div fxFlex="50"   fxFlex.gt-sm="25" class="left-info-panel">
+        <div class="title">
+            <h3>Contact us</h3>
+        </div>
+         <ul>
+           <li>
+              <i class="material-icons">email </i>
+              <br>
+            <h4>Email</h4>
+            <br>
+            <p class=" text-muted text-muted">Support@MyMyVapor.com</p>
+           </li>
+         </ul>
+      </div>
+      <div fxFlex="200"   fxFlex.gt-sm="60" class="contact-form">
+          <div class="title">
+              <h3>Contact us</h3>
+          </div>
+          <form fxLayout="row wrap" [formGroup]="wholesalerform">
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Business Name (required)" formControlName="BusinessName">
+                    <mat-error>Please enter a valid Business Name</mat-error>
+                  </mat-form-field>
+            </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Business Contact Name (required)" formControlName="ContactName" >
+                    <mat-error>Please enter a valid Business Contact Name</mat-error>
+                  </mat-form-field>
+            </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+                  <input matInput placeholder="Email address of the Business (required)" formControlName="EmailAddress" >
+                  <mat-error>Please enter a valid Email Address</mat-error>
+                </mat-form-field>
+          </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+                  <input matInput placeholder="Phone Number of the Business" formControlName="BusinessPhoneNumber" >
+                  <mat-error>Please enter business phone number</mat-error>
+                </mat-form-field>
+            </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Location Address Line 1(required)" formControlName="AddressLine1" >
+                    <mat-error>Please enter a valid street name and number</mat-error>
+                  </mat-form-field>
+            </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Location Address Line 2 (optional)" formControlName="AddressLine2">
+                </mat-form-field>
+            </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="City (required)" formControlName="City" >
+                    <mat-error>Please enter a valid city</mat-error>
+                  </mat-form-field>
+            </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                <mat-form-field class="w-100">
+                    <mat-select matSelect formControlName="State" required placeholder="Please select the state in which the business is located.">
+                        <mat-option>None</mat-option>    
+                        <ng-container *ngFor="let wcstate of wcstates">
+                          <mat-option value="{{wcstate.code}}">{{wcstate.name}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                    <mat-error>Please select the state in which the business is located.</mat-error>
+                </mat-form-field>
+            </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+                  <input matInput placeholder="ZipCode of the location of the business (required)" formControlName="ZipCode" >
+                  <mat-error>Please enter ZipCode of the location of the business.</mat-error>
+                </mat-form-field>
+          </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <mat-form-field class="w-100">
+                  <input matInput placeholder="FEIN of the Business - Federal Tax Id of the Business" formControlName="FederalBusinessTaxId" >
+                  <mat-error>Please enter valid FEIN of the business</mat-error>
+                </mat-form-field>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-label>We Require all of our wholesalers to supply us with proof of license and sales tax id information in the states they do business in so that we can better serve their needs in those states.</mat-label>
+          </div>
+          <div class="table-responsive" formArrayName="StateRegistrations" >
+              <table class="table">
+                <thead>
+                  <tr class="th-wholesaler">
+                    <td>
+                      Click to remove.
+                    </td>
+                    <td>
+                      <mat-label>Sales Tax ID</mat-label>
+                    </td>
+                    <td>
+                      <mat-label>State issuing Sales Tax Id</mat-label>
+                    </td>
+                    <td>
+                      <mat-label>Upload Sales License issued by the state .pdf,.jpg,.png file</mat-label>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody id="table-compare">
+                  <tr *ngFor="let StateRegistration of wholesalerform.controls.StateRegistrations.controls; let i=index"  [formGroupName]="i" >
+                    <td>
+                      <button class="btn-project-del" 
+                              mat-icon-button type="button" 
+                              mat-raised-button color="accent" 
+                              type="button"
+                              (click)="removeregistrations(i)" >
+                        <mat-icon>remove</mat-icon>
+                      </button>
+                    </td>
+                    <td class="item-row">
+                      <mat-form-field class="w-100">
+                        <input matInput placeholder="Enter Sales Tax Id of the Business for the state" formControlName="StateSalesTaxId">
+                        <mat-error>Please enter Sales Tax Id of the Business for the state</mat-error>
+                      </mat-form-field>
+                    </td>
+                    <td class="item-row">
+                      <mat-form-field class="w-100">
+                        <mat-select matSelect formControlName="StateSelected" placeholder="Select the state which issued the sales tax id.">
+                          <mat-option>None</mat-option>    
+                            <mat-option *ngFor="let wcstate of wcstates" [value]="wcstate.code">{{wcstate.name}}</mat-option>
+                        </mat-select>
+                        <mat-error>Please select the state which issued the sales tax id.</mat-error>
+                      </mat-form-field>
+                    </td>
+                    <td class="item-row">
+                      <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                        <mat-form-field class="w-100">
+                              <input matInput formControlName="FileName" placeholder="Upload a your license." required readonly>
+                              <input type="file" #FileName id="uploadFile" (change)="uploadFileEvt($event,i)" name="uploadFile" accept="image/*"/>
+                          </mat-form-field>
+                      </div>
+                    </td>
+                </tr>
+                </tbody>
+              </table>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">  
+            <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <button class="btn-project" 
+                      mat-raised-button color="accent" type="button" 
+                      (click)="addstateregistrations()"><mat-icon>add</mat-icon>Add more license details</button>
+            </div>
+          </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Subject" formControlName="Subject" >
+                    <mat-error>Please enter a valid Subject. Serious Enquiries Only.</mat-error>
+                  </mat-form-field>
+            </div>
+            <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                <mat-form-field class="w-100">
+                    <textarea placeholder="Post content" matInput rows="10" formControlName="Message" ></textarea>
+                    <mat-error>Please enter a valid Message. Serious Enquiries Only.</mat-error>
+                  </mat-form-field>
+            </div>
+
+              <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                <button class="btn-project" 
+                        mat-raised-button color="accent" 
+                        type="submit" 
+                        [class.spinner]="whcsubmitbuttonloading" 
+                        [disabled]="wholesalerform.invalid"
+                        (click)="UploadWholesalerQueryRequest(wholesalerform)">Send</button>
+              </div>
+              <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1" [hidden]="!whcshowsubmitstatus">
+                <mat-label>Wholesaler Request Status: {{whcsubmissionstatusstring}}</mat-label>
+           </div>
+      
+  
+            </form>
+      </div>
+    </mat-card>
+  </div>
+  </div>
+  
+  

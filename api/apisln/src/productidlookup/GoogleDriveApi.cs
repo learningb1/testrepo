@@ -31,6 +31,8 @@ namespace productidlookup
 
         protected string _warrantyclaimsheetid  = "1FgKDsP4LCZDXviuGIYq4Wge0cTr-V8xQv1HIuEso8qQ";
 
+        protected string _wholesalerinfofolderid = "18MzP-bztxG_oNE1obVZHRU-QfrVQMbwk";
+
         protected string urllink = "https://drive.google.com/file/d/";
 
         protected ServiceAccountCredential credential;
@@ -61,6 +63,64 @@ namespace productidlookup
             });
 
         }
+
+        public void UpdateWholesalerQueriesSheet(WholesalersRequestModel request,
+                                                List<StateTaxRegistrationInternal> internals)
+        {
+             SheetsService sheetsService = new SheetsService(new BaseClientService.Initializer
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "Google-SheetsSample/0.1",
+            });
+
+            var range = string.Empty;
+            
+            range = @"WholesalerEnquiriesOne!A:CZ";
+
+            var valueRange = new ValueRange();
+
+            var oblist = new List<object>();
+            
+                oblist.Add(DateTime.Now.ToShortDateString());
+                oblist.Add(String.IsNullOrEmpty(request.BusinessName) ? "": request.BusinessName);
+                oblist.Add(String.IsNullOrEmpty(request.ContactName) ? "": request.ContactName);
+                oblist.Add(String.IsNullOrEmpty(request.AddressLine1) ? "": request.AddressLine1);
+                oblist.Add(String.IsNullOrEmpty(request.AddressLine2) ? "": request.AddressLine2);
+                oblist.Add(String.IsNullOrEmpty(request.City) ? "": request.City);
+                oblist.Add(String.IsNullOrEmpty(request.State) ? "": request.State);
+                oblist.Add(String.IsNullOrEmpty(request.ZipCode) ? "": request.ZipCode);
+                oblist.Add(String.IsNullOrEmpty(request.BusinessPhoneNumber) ? "": request.BusinessPhoneNumber);
+                oblist.Add(String.IsNullOrEmpty(request.EmailAddress) ? "": request.EmailAddress);
+                oblist.Add(String.IsNullOrEmpty(request.ContactName) ? "": request.ContactName);
+                oblist.Add(String.IsNullOrEmpty(request.Subject) ? "": request.Subject);
+                oblist.Add(String.IsNullOrEmpty(request.Message) ? "": request.Message);
+                oblist.Add(String.IsNullOrEmpty(request.FederalBusinessTaxId) ? "": request.FederalBusinessTaxId);
+                
+                foreach (var item in internals)
+                {
+                        oblist.Add(String.IsNullOrEmpty(item.StateSalesTaxId) ? "": item.StateSalesTaxId);
+                        oblist.Add(String.IsNullOrEmpty(item.StateSelected) ? "": item.StateSelected);
+                        oblist.Add(String.IsNullOrEmpty(item.UploadedUrl) ? "": item.UploadedUrl);
+                }
+          
+      
+            
+            valueRange.Values = new List<IList<object>> { oblist };
+
+
+            Google.Apis.Sheets.v4.Data.ValueRange requestBody = 
+                                new Google.Apis.Sheets.v4.Data.ValueRange();
+
+            var appendRequest = 
+                sheetsService.Spreadsheets.Values.Append(valueRange, _registrationsheetid, range);
+            appendRequest.ValueInputOption = 
+                SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
+
+            // To execute asynchronously in an async method, replace `request.Execute()` as shown:
+            Google.Apis.Sheets.v4.Data.AppendValuesResponse response = appendRequest.Execute();
+        }
+
+
 
         public void UpdateQueriesSheet(string name,
                                                string emailaddress,
@@ -329,6 +389,15 @@ namespace productidlookup
             string r = urllink + UploadDocument(stream,filename,_registrationcontentfolderid);
             return r;
         }
+
+
+        public string UploadWholesalerDocument(Stream stream,string filename)
+        {
+            string r = urllink + UploadDocument(stream,filename,_wholesalerinfofolderid);
+            return r;
+        }
+
+
 
         public string UploadWarrantyClaimDocument(Stream stream,string filename)
         {
