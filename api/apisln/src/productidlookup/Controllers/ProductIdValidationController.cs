@@ -65,7 +65,7 @@ namespace productidlookup.Controllers
                 return false;
             }
 
-            if (productId.Length < 6)
+            if (productId.Length < 5)
             {
                 return false;
             }
