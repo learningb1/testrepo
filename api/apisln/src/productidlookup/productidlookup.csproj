@@ -83,6 +83,24 @@
     <None Update="OwnerWholesalerRequestTemplate.htm" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Update="OwnerACHRequestTemplate.htm" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="OwnerACHRequestTemplate.htm" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="CustomerACHRequestTemplate.htm" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CustomerACHRequestTemplate.htm" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+
   <ItemGroup>
     <PackageReference Include="Google.Apis.Drive.v3" Version="1.49.0.2117" />
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.49.0.2134" />

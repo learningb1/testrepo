@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace productidlookup
 {
-    public class DriveApiService
+    public class DriveApiService 
     {
 
           protected string _registrationcontentfolderid = "15OnF0EjJD7uHezlvBAeXxWOtZUt2D9B_";
@@ -32,6 +32,8 @@ namespace productidlookup
         protected string _warrantyclaimsheetid  = "1FgKDsP4LCZDXviuGIYq4Wge0cTr-V8xQv1HIuEso8qQ";
 
         protected string _wholesalerinfofolderid = "18MzP-bztxG_oNE1obVZHRU-QfrVQMbwk";
+
+        protected string _voidcheckfolderid = "1zlgbJrL2aqfQ8R-tZVrNeQNjvS6vW0Hn";
 
         protected string urllink = "https://drive.google.com/file/d/";
 
@@ -306,6 +308,77 @@ namespace productidlookup
 
         }
 
+        public void UploadACHPaymentRequest(string companyname,
+            string contactname, 
+            string bankname,
+            string accounttype,
+            string bankroutingnumber,
+            string routingnumberverified,
+            string bankaccountnumber,
+            string emailaddress,
+            string addressline1,
+            string addressline2,
+            string city,
+            string state,
+            string printedname,
+            string titlename,
+            string fein,
+            string datesigned,
+            string zipcode,
+            string voidchecklink,
+            string comments,
+            string source)
+            {
+
+             SheetsService sheetsService = new SheetsService(new BaseClientService.Initializer
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "Google-SheetsSample/0.1",
+            });
+            
+
+            var range = @"ACHPaymentUpload!A:S";
+            var valueRange = new ValueRange();
+
+            var oblist = new List<object>()
+            {
+                String.IsNullOrEmpty(companyname) ? "": companyname,
+                String.IsNullOrEmpty(contactname)? "" : contactname,
+                String.IsNullOrEmpty(bankname)? "" : bankname,
+                String.IsNullOrEmpty(accounttype)? "" : accounttype,
+                String.IsNullOrEmpty(bankroutingnumber)? "" : bankroutingnumber,
+                String.IsNullOrEmpty(bankaccountnumber)? "" : bankaccountnumber,
+                String.IsNullOrEmpty(emailaddress)? "" : emailaddress,
+                String.IsNullOrEmpty(addressline1)? "" : addressline1,
+                String.IsNullOrEmpty(addressline2)? "" : addressline2,
+                String.IsNullOrEmpty(city)? "" : city,
+                String.IsNullOrEmpty(state)? "" : state,
+                String.IsNullOrEmpty(zipcode)? "" : zipcode,
+                String.IsNullOrEmpty(printedname)? "" : printedname,
+                String.IsNullOrEmpty(titlename)? "" : titlename,
+                String.IsNullOrEmpty(fein)? "" : fein,
+                String.IsNullOrEmpty(datesigned)? "" : datesigned,
+                String.IsNullOrEmpty(voidchecklink)? "" : voidchecklink,
+                String.IsNullOrEmpty(comments)? "" : comments,
+                String.IsNullOrEmpty(source)? "" : source
+          };
+            
+            valueRange.Values = new List<IList<object>> { oblist };
+
+
+            Google.Apis.Sheets.v4.Data.ValueRange requestBody = 
+                                new Google.Apis.Sheets.v4.Data.ValueRange();
+
+            var appendRequest = 
+                sheetsService.Spreadsheets.Values.Append(valueRange, _registrationsheetid, range);
+            appendRequest.ValueInputOption = 
+                SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
+
+            // To execute asynchronously in an async method, replace `request.Execute()` as shown:
+            Google.Apis.Sheets.v4.Data.AppendValuesResponse response = appendRequest.Execute();
+
+        }
+
 
         public void UpdateWarrantyClaimSheet(string SerialNumber,
             string PurchaseDate,
@@ -382,6 +455,12 @@ namespace productidlookup
             // To execute asynchronously in an async method, replace `request.Execute()` as shown:
             Google.Apis.Sheets.v4.Data.AppendValuesResponse response = appendRequest.Execute();
 
+        }
+
+        public string UploadVoidCheckDocument(Stream stream, string filename)
+        {
+            string r = urllink + UploadDocument(stream,filename,this._voidcheckfolderid);
+            return r;
         }
 
         public string UploadRegistrationDocument(Stream stream,string filename)
@@ -544,9 +623,7 @@ namespace productidlookup
                 smtp.Send(message);
             }
         }
-
-        
-
+       
     }
 
     public class AttachmentItem
