@@ -37,82 +37,12 @@ export class MainComponent implements OnInit {
     {
       displayName: 'Home',
       iconName: 'recent_actors',
-      children: [
-        {
-          displayName: 'Home-1',
-          iconName: 'group',
-          route: '/home/one'
-        }]
+      route: '/home/one'
     }, 
     {
       displayName: 'Products',
           iconName: 'feedback',
           route: '/home/products/all'
-    },
-    {
-      displayName: 'Shop',
-      iconName: 'movie_filter',
-      children: [
-        {
-          displayName: 'Computers',
-          iconName: 'group',
-          children: [
-            {
-              displayName: 'Laptops',
-              iconName: 'person',
-              route: 'michael-prentice',
-            },
-            {
-              displayName: 'Cables',
-              iconName: 'person',
-              route: 'stephen-fluin',
-               },
-            {
-              displayName: 'Monitors',
-              iconName: 'person',
-              route: 'mike-brocchi',
-           },
-           {
-            displayName: 'Tablets',
-            iconName: 'person',
-            route: 'mike-brocchi',
-         },
-         {
-          displayName: 'Headsets',
-          iconName: 'person',
-          route: 'mike-brocchi',
-       }
-          ]
-        },
-        {
-          displayName: 'Tv & Audio',
-          iconName: 'speaker_notes',
-          children: [
-            {
-              displayName: 'Tv',
-              iconName: 'star_rate',
-              route: 'material-design'
-            },
-            {
-              displayName: 'Audio',
-              iconName: 'star_rate',
-              route: 'what-up-web'
-            },
-            {
-              displayName: 'Video',
-              iconName: 'star_rate',
-              route: 'my-ally-cli'
-            },
-            {
-              displayName: 'Dvd',
-              iconName: 'star_rate',
-              route: 'become-angular-tailer'
-            }
-          ]
-        },
-        
-        
-      ]
     },
     {
       displayName: 'Pages',
@@ -132,11 +62,6 @@ export class MainComponent implements OnInit {
           displayName: 'Contact',
           iconName: 'feedback',
           route: '/pages/contact'
-        },
-        {
-          displayName: '404',
-          iconName: 'feedback',
-          route: '/pages/error'
         }
       ]
     },

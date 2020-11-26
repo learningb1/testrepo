@@ -1,9 +1,9 @@
 [
-    { "title": "Discount Vaping Devices", "subtitle": "Sale up to 30% off all products in the new collection.", "image":"assets/images/product/laptop.png" },
-    { "title": "Discount Vape Pods", "subtitle": "Sale up to 30%.", "image": "assets/images/product/tablet.png" },
-    { "title": "Deals on Flavors", "subtitle": "Sale up to 30%.", "image": "assets/images/product/cameras.png" },
-    { "title": "Deals on Pods", "subtitle": "Sale up to 20%.", "image": "assets/images/product/mobiles.png" },
-	{ "title": "Deals on Battery", "subtitle": "Sale up to 20%.", "image": "assets/images/product/mobiles.png" },
-	{ "title": "Deals on 1.3ML Pods", "subtitle": "Sale up to 20%.", "image": "assets/images/product/mobiles.png" },
-    { "title": "Deals on Vapes", "subtitle": "Sale up to 20%.", "image": "assets/images/product/cameras.png" }
+    { "title": "Discount Vaping Devices", "subtitle": "Sale up to 30% off all products in the new collection.", "image":"assets/images/product/bottombanner1.jpg" },
+    { "title": "Discount Vape Pods", "subtitle": "Sale up to 30%.", "image": "assets/images/product/bottombanner03.jpg" },
+    { "title": "Deals on Flavors", "subtitle": "Sale up to 30%.", "image": "assets/images/product/bottombanner04.png" },
+    { "title": "Deals on Pods", "subtitle": "Sale up to 20%.", "image": "assets/images/product/bottombanner1.jpg" },
+	{ "title": "Deals on Battery", "subtitle": "Sale up to 20%.", "image": "assets/images/product/bottombanner1.jpg" },
+	{ "title": "Deals on 1.3ML Pods", "subtitle": "Sale up to 20%.", "image": "assets/images/product/bottombanner1.jpg" },
+    { "title": "Deals on Vapes", "subtitle": "Sale up to 20%.", "image": "assets/images/product/bottombanner1.jpg" }
   ]
