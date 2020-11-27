@@ -1,29 +1,29 @@
 [{
   "id": 1,
-  "name": "BLUE MyMy DEVICE",
-  "price": 20.00,
-  "salePrice": 11.99,
-  "discount": 46,
+  "name": "MYMY SLIM PEN TWIST BATTERY + SMART USB - BLACK BEAUTY",
+  "price": 0.00,
+  "salePrice": 0.00,
+  "discount": 0,
   "pictures": [
     {
-      "small": "assets/images/product/devicekits/blue/blue-device-1.jpg",
-      "big": "assets/images/product/devicekits/blue/blue-device-1.jpg"
+      "small": "assets/images/product/slimtestpen/01/01-01.png",
+      "big": "assets/images/product/slimtestpen/01/01-01.png"
   },
   {
-      "small": "assets/images/product/devicekits/blue/blue-device-2.jpg",
-      "big": "assets/images/product/devicekits/blue/blue-device-2.jpg"
+      "small": "assets/images/product/slimtestpen/01/01-02.png",
+      "big": "assets/images/product/slimtestpen/01/01-02.png"
   },
   {
-       "small": "assets/images/product/devicekits/blue/blue-device-3.jpg",
-      "big": "assets/images/product/devicekits/blue/blue-device-3.jpg"
+       "small": "assets/images/product/slimtestpen/01/01-03.png",
+      "big": "assets/images/product/slimtestpen/01/01-03.png"
   },
   {
-     "small": "assets/images/product/devicekits/blue/blue-device-4.jpg",
-      "big": "assets/images/product/devicekits/blue/blue-device-4.jpg"
+     "small": "assets/images/product/slimtestpen/01/01-04.png",
+      "big": "assets/images/product/slimtestpen/01/01-04.png"
 },
 {
-   "small": "assets/images/product/devicekits/blue/blue-device-1.jpg",
-      "big": "assets/images/product/devicekits/blue/blue-device-1.jpg"
+   "small": "assets/images/product/slimtestpen/01/01-05.png",
+      "big": "assets/images/product/slimtestpen/01/01-05.png"
 }
   ],
   "shortDetails": "New experience for smokers seeking a gratifying Flavor .The MyMy Device comes with a Micro USB Charger MyMy Pods Sold Separately.",
