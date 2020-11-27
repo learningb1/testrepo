@@ -1,9 +1,9 @@
 [{
   "id": 1,
   "name": "MYMY SLIM PEN TWIST BATTERY + SMART USB - BLACK BEAUTY",
-  "price": 0.00,
-  "salePrice": 0.00,
-  "discount": 0,
+  "price": 20.00,
+  "salePrice": 11.99,
+  "discount": 46,
   "pictures": [
     {
       "small": "assets/images/product/slimtestpen/01/01-01.png", 
