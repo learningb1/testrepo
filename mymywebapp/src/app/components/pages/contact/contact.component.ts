@@ -64,12 +64,12 @@ export class ContactComponent implements OnInit {
               }
               else
               {
-                this.SetCSubmissionFailureStatus("Our apologies. We could not submit your enquiry. Please contact us by email at contact@mymyvape.com.");
+                this.SetCSubmissionFailureStatus("Our apologies. We could not submit your enquiry. Please contact us by email at support@mymyvape.com.");
               }
           
       },
       err => {
-          this.SetCSubmissionFailureStatus("Our apologies. We could not submit your enquiry. Please contact us by email at contact@mymyvape.com.");
+          this.SetCSubmissionFailureStatus("Our apologies. We could not submit your enquiry. Please contact us by email at support@mymyvape.com.");
       }
     );
   }

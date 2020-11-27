@@ -141,12 +141,12 @@ export class WholesalersComponent implements OnInit {
               }
               else
               {
-                this.SetWHCSubmissionFailureStatus("Our apologies. We could not submit your enquiry. Please contact us by email at contact@mymyvape.com.");
+                this.SetWHCSubmissionFailureStatus("Our apologies. We could not submit your enquiry. Please contact us by email at support@mymyvape.com.");
               }
           
       },
       err => {
-          this.SetWHCSubmissionFailureStatus("Our apologies. We could not submit your enquiry. Please contact us by email at contact@mymyvape.com.");
+          this.SetWHCSubmissionFailureStatus("Our apologies. We could not submit your enquiry. Please contact us by email at support@mymyvape.com.");
       }
     );
   }

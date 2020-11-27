@@ -1207,20 +1207,20 @@ UploadWarrantyClaim()
               result1 = res['result'];
               if (result1 === 'ok')
               {
-                this.SetWSubmissionSuccessStatus("Congratulations!! Your MyMy warranty claim has been successfully submitted. Please make sure you have received the confirmation email of your warranty submission. If not please contact us at contact@mymyvape.com.");
+                this.SetWSubmissionSuccessStatus("Congratulations!! Your MyMy warranty claim has been successfully submitted. Please make sure you have received the confirmation email of your warranty submission. If not please contact us at support@mymyvape.com.");
               }
               else if (result1 === 'Invalid ProductId')
               {
-                this.SetWSubmissionFailureStatus("Our apologies. We could not validate your product serial number. Please verify that the serial number entered is correct. Please email us at contact@mymyvape.com if the issue persists.");
+                this.SetWSubmissionFailureStatus("Our apologies. We could not validate your product serial number. Please verify that the serial number entered is correct. Please email us at support@mymyvape.com if the issue persists.");
               }
               else
               {
-                this.SetWSubmissionFailureStatus("Our apologies. We could not receive your Warranty claim submission. Please email us at contact@mymyvape.com regarding this issue.");
+                this.SetWSubmissionFailureStatus("Our apologies. We could not receive your Warranty claim submission. Please email us at support@mymyvape.com regarding this issue.");
               }
           
       },
       err => {
-          this.SetWSubmissionFailureStatus("Our apologies. We could not receive your Warranty claim submission. Please email us at contact@mymyvape.com regarding this issue.");
+          this.SetWSubmissionFailureStatus("Our apologies. We could not receive your Warranty claim submission. Please email us at support@mymyvape.com regarding this issue.");
       }
     );
 
@@ -1244,22 +1244,22 @@ UploadRegistration()
               result1 = res['result'];
               if (result1 === 'ok')
               {
-                this.SetSubmissionSuccessStatus("Congratulations!! Your MyMy product has been successfully registered. Please make sure you have received the confirmation email of your product registration. If not please contact us at contact@mymyvape.com.");
+                this.SetSubmissionSuccessStatus("Congratulations!! Your MyMy product has been successfully registered. Please make sure you have received the confirmation email of your product registration. If not please contact us at support@mymyvape.com.");
               }
               else if (result1 === 'Invalid ProductId')
               {
-                this.SetSubmissionFailureStatus("Our apologies. We could not validate your product serial number. Please verify that the serial number entered is correct. Please email us at contact@mymyvape.com if the issue persists.");
+                this.SetSubmissionFailureStatus("Our apologies. We could not validate your product serial number. Please verify that the serial number entered is correct. Please email us at support@mymyvape.com if the issue persists.");
               }
               else
               {
                 console.log(res);
-                this.SetSubmissionFailureStatus("Our apologies. We could not register your product. Please email us at contact@mymyvape.com regarding this issue.");
+                this.SetSubmissionFailureStatus("Our apologies. We could not register your product. Please email us at support@mymyvape.com regarding this issue.");
               }
           
       },
       err => {
         console.log(err);
-          this.SetSubmissionFailureStatus("Our apologies. We could not register your product. Please email us at contact@mymyvape.com regarding this issue.");
+          this.SetSubmissionFailureStatus("Our apologies. We could not register your product. Please email us at support@mymyvape.com regarding this issue.");
       }
     );
 
