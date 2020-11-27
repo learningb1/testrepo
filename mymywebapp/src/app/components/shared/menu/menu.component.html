@@ -4,24 +4,14 @@
     <a  mat-button class="mat-button" [matMenuTriggerFor]="Products" (click)="openMegaMenu()">Products<mat-icon class="caret">arrow_drop_down</mat-icon></a>
       <mat-menu #Products="matMenu" [overlapTrigger]="false" class="app-dropdown mega-menu">
           <div fxLayout="row wrap">
-              <div fxFlex="25" fxLayout="column" class="p-1">
-                  <a mat-menu-item routerLink="/home/products/DeviceKits"><b>Disposable</b></a>
+              <div fxFlex="100" fxLayout="column" class="p-1">
+                  <a mat-menu-item routerLink="/home/products/SlimPenBattery"><b>MyMy Slim Pen Battery</b></a>
                   <mat-divider></mat-divider>
-                  <a mat-menu-item routerLink="/home/products/DeviceKits">MyMy 1.3mgML</a>
-                  <a mat-menu-item routerLink="/home/products/DeviceKits">MyMy Elite</a>
-                  <a mat-menu-item routerLink="/home/products/DeviceKits">MyMy Drop</a>
-                  <a mat-menu-item routerLink="/home/products/DeviceKits">MyMy Max</a>
-                  <a mat-menu-item routerLink="/home/products/DeviceKits">MyMy MAX PRO</a>
-				  <a mat-menu-item routerLink="/home/products/DeviceKits">MyMy MINI</a>
-              </div>
-              <div fxFlex="75" class="p-1">
-                  <a mat-menu-item routerLink="/home/products/DeviceKits"><b>Basic Device Kit</b></a>
-                  <mat-divider></mat-divider>
-                  <button mat-menu-item routerLink="/home/products/DeviceKits">MyMy Twist Slim PEN - Gold</button>
-                  <button mat-menu-item routerLink="/home/products/DeviceKits">MyMy Twist Slim PEN - Black</button>
-                  <button mat-menu-item routerLink="/home/products/DeviceKits">MyMy Twist Slim PEN - Blue</button>
-                  <button mat-menu-item routerLink="/home/products/DeviceKits">MyMy Twist Slim PEN - Silver</button>
-				  <button mat-menu-item routerLink="/home/products/DeviceKits">MyMy Twist Slim PEN - Green</button>
+                  <a mat-menu-item routerLink="/home/product/1">MYMY SLIM PEN TWIST BATTERY + SMART USB - BLACK BEAUTY</a>
+                  <a mat-menu-item routerLink="/home/product/2">MYMY SLIM PEN TWIST BATTERY + SMART USB - GOLD MINE</a>
+                  <a mat-menu-item routerLink="/home/product/3">MYMY SLIM PEN TWIST BATTERY + SMART USB - BLUE MOON</a>
+                  <a mat-menu-item routerLink="/home/product/4">MYMY SLIM PEN TWIST BATTERY + SMART USB - SHINY CHROME</a>
+                  <a mat-menu-item routerLink="/home/product/5">MYMY SLIM PEN TWIST BATTERY + SMART USB - RAINY RAINBOW</a>
               </div>
           </div>
 
