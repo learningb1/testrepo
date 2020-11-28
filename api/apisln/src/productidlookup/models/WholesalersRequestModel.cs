@@ -47,6 +47,13 @@ public class WholesalersRequestModel
     [Required(ErrorMessage = "Message is required.")]
     public string Message;
 
+    [Required(ErrorMessage = "Proof of FEIN")]
+    public string FEINImageString;
+
+    [Required(ErrorMessage = "FEIN File Name Required")]
+    public string FEINFileName;
+
+
     
 }
 

@@ -85,7 +85,14 @@
                 </mat-form-field>
           </div>
           <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
-            <mat-label>We Require all of our wholesalers to supply us with proof of license and sales tax id information in the states they do business in so that we can better serve their needs in those states.</mat-label>
+            <mat-label>We Require all of our wholesalers to supply us with proof of license and proof of FEIN information in the states they do business in so that we can better serve their needs in those states.</mat-label>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-form-field class="w-100">
+                  <mat-label>Select a picture of the proof of FEIN.</mat-label>
+                  <input matInput formControlName="FEINFileName" placeholder="Please upload a picture of the proof of FEIN." required readonly>
+                  <input type="file" #FEINFileName id="FEINFileNameuploadFile" (change)="uploadFEINDataFileEvt($event)" name="FEINFileNameuploadFile" accept="image/*"/>
+            </mat-form-field>
           </div>
           <div class="table-responsive" formArrayName="StateRegistrations" >
               <table class="table">
@@ -95,13 +102,13 @@
                       Click to remove.
                     </td>
                     <td>
-                      <mat-label>Sales Tax ID</mat-label>
+                      <mat-label>Business License ID</mat-label>
                     </td>
                     <td>
-                      <mat-label>State issuing Sales Tax Id</mat-label>
+                      <mat-label>State of Business</mat-label>
                     </td>
                     <td>
-                      <mat-label>Upload Sales License issued by the state .pdf,.jpg,.png file</mat-label>
+                      <mat-label>Upload Wholesale License doc issued by the state .pdf,.jpg,.png file</mat-label>
                     </td>
                   </tr>
                 </thead>
@@ -118,17 +125,17 @@
                     </td>
                     <td class="item-row">
                       <mat-form-field class="w-100">
-                        <input matInput placeholder="Enter Sales Tax Id of the Business for the state" formControlName="StateSalesTaxId">
-                        <mat-error>Please enter Sales Tax Id of the Business for the state</mat-error>
+                        <input matInput placeholder="Enter Business License Id " formControlName="StateSalesTaxId">
+                        <mat-error>Please enter the Business License Id issued</mat-error>
                       </mat-form-field>
                     </td>
                     <td class="item-row">
                       <mat-form-field class="w-100">
-                        <mat-select matSelect formControlName="StateSelected" placeholder="Select the state which issued the sales tax id.">
+                        <mat-select matSelect formControlName="StateSelected" placeholder="Select the state of business.">
                           <mat-option>None</mat-option>    
                             <mat-option *ngFor="let wcstate of wcstates" [value]="wcstate.code">{{wcstate.name}}</mat-option>
                         </mat-select>
-                        <mat-error>Please select the state which issued the sales tax id.</mat-error>
+                        <mat-error>Please select the state of business which issued the license.</mat-error>
                       </mat-form-field>
                     </td>
                     <td class="item-row">

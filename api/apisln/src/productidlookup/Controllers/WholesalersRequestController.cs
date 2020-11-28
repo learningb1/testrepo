@@ -33,6 +33,33 @@ namespace productidlookup.Controllers
                 List<StateTaxRegistrationInternal> internalregs = 
                             new  List<StateTaxRegistrationInternal>();
 
+
+                // this.InternalFilename = 
+                //            DateTime.Now.Ticks
+                //           + "-"  
+                //           + fedtaxid 
+                //           + "-"  
+                //           + registration.StateSalesTaxId
+                //           + "-"
+                //           + registration.StateSelected
+                //           + "-"
+                //           + businessname
+                //           + "-"
+                //           + registration.FileName;
+
+                string feinfilename = DateTime.Now.Ticks 
+                                      + "-"
+                                      + data.FederalBusinessTaxId
+                                      + "-"
+                                      + data.BusinessName
+                                      + "-"
+                                      + data.FEINFileName;
+                string feinfileurl = string.Empty;
+                using(MemoryStream ms = ImageHelpers.ConvertFromBase64(data.FEINImageString))
+                {
+                    feinfileurl = service.UploadWholesalerDocument(ms,feinfilename);
+                }
+
                 foreach(StateTaxRegistration reg in data.StateRegistrations)
                 {
                     StateTaxRegistrationInternal internalreg = 
@@ -51,7 +78,7 @@ namespace productidlookup.Controllers
                 }
                 
 
-                service.UpdateWholesalerQueriesSheet(data, internalregs);
+                service.UpdateWholesalerQueriesSheet(data, internalregs,feinfileurl);
             
                 
                 //"JJDistributor.Content@gmail.com"

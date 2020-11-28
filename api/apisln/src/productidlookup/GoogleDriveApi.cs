@@ -67,7 +67,8 @@ namespace productidlookup
         }
 
         public void UpdateWholesalerQueriesSheet(WholesalersRequestModel request,
-                                                List<StateTaxRegistrationInternal> internals)
+                                                List<StateTaxRegistrationInternal> internals,
+                                                string feinfileurl)
         {
              SheetsService sheetsService = new SheetsService(new BaseClientService.Initializer
             {
@@ -97,6 +98,7 @@ namespace productidlookup
                 oblist.Add(String.IsNullOrEmpty(request.Subject) ? "": request.Subject);
                 oblist.Add(String.IsNullOrEmpty(request.Message) ? "": request.Message);
                 oblist.Add(String.IsNullOrEmpty(request.FederalBusinessTaxId) ? "": request.FederalBusinessTaxId);
+                oblist.Add(String.IsNullOrEmpty(feinfileurl) ? "": feinfileurl);
                 
                 foreach (var item in internals)
                 {

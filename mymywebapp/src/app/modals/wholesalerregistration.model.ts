@@ -13,6 +13,8 @@ export interface WholesalerRegistration
     StateRegistrations : StateRegistration[];
     Subject: string;
     Message: string;
+    FEINImageString: string;
+    FEINFileName: string;
 
 
 

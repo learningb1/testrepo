@@ -36,7 +36,9 @@ export class WholesalersComponent implements OnInit {
       FederalBusinessTaxId: new FormControl('',[Validators.required,Validators.minLength(9),Validators.maxLength(9)]),
       StateRegistrations: this._fb.array([this.initstateregistrations(),]),
       Subject: new FormControl('',[Validators.required]),
-      Message: new FormControl('',[Validators.required])
+      Message: new FormControl('',[Validators.required]),
+      FEINImageString: new FormControl('',[Validators.required]),
+      FEINFileName:  new FormControl('',[Validators.required])
       
   });
   }
@@ -50,6 +52,30 @@ export class WholesalersComponent implements OnInit {
         ImgFileData: new FormControl('',Validators.required),
       });
   }
+
+
+  _handleFEINDataReaderLoaded(readerEvt) {
+    var binaryString = readerEvt.target.result;
+    this.wholesalerform.patchValue({FEINImageString: btoa(binaryString)});
+   }
+
+   uploadFEINDataFileEvt(imgFile: any) {
+    if (imgFile.target.files && imgFile.target.files[0]) {
+        this.wholesalerform.patchValue({FEINFileName: ""});
+      Array.from(imgFile.target.files).forEach((file: File) => {
+        this.wholesalerform.patchValue({FEINFileName: file.name});
+      
+        var reader = new FileReader();
+        reader.onload = this. _handleFEINDataReaderLoaded.bind(this);
+
+        reader.readAsBinaryString(imgFile.target.files[0]);
+        
+      });
+                
+      }
+  }
+
+
 
   _handleReaderLoaded(i: number, readerEvt ) {
 

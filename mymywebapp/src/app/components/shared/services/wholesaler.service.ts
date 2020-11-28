@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 
 export class WholesalerService {
 
-  //readonly rooturl = "https://localhost:5001/api/";
-  readonly rooturl = "https://mymyvape.azurewebsites.net/api/";
+  readonly rooturl = "https://localhost:5001/api/";
+  //readonly rooturl = "https://mymyvape.azurewebsites.net/api/";
   
 
   constructor(private httpClient: HttpClient) { }
