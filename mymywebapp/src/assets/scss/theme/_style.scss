@@ -4000,7 +4000,24 @@ line-height: 23px;
             font-weight: 500;
             line-height: 1;
         }
+        
         }
+
+        .full-desc {
+          padding: 20px;
+          p {
+            line-height: 26px;
+          }
+          ul {
+            list-style-position: inside;
+            margin-top: 15px;
+            padding-left: 20px;
+            li {
+              margin-bottom: 7px;
+            }
+          }
+        }
+
         .mat-expansion-panel-body {
           p {
             line-height: 24px;
