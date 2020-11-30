@@ -1,6 +1,9 @@
 [{
   "id": 1,
-  "name": "MYMY SLIM PEN TWIST BATTERY + SMART USB - BLACK BEAUTY",
+  "name": "MYMY SLIM PEN TWIST BATTERY SMART USB BLACK BEAUTY",
+  "name1":"MYMY TWIST SLIM PEN BATTERY",
+  "name2":"WITH SMART SENSE USB ADAPTOR",
+  "name3":"BLACK BEAUTY",
   "price": 20.00,
   "salePrice": 11.99,
   "discount": 46,
@@ -32,11 +35,14 @@
   "brand": "MyMy",
   "newPro": true,
   "sale": true,
-  "category": "SlimPenBattery"
+  "category": "Twist Slim Battery"
 },
 {
   "id": 2,
   "name": "MYMY SLIM PEN TWIST BATTERY + SMART USB - GOLD MINE",
+  "name1":"MYMY TWIST SLIM PEN BATTERY",
+  "name2":"WITH SMART SENSE USB ADAPTOR",
+  "name3":"GOLD MINE",
   "price": 20.00,
   "salePrice": 11.99, 
   "discount": 46,
@@ -68,12 +74,15 @@
   "brand": "MyMy",
   "newPro": true,
   "sale": true,
-  "category": "SlimPenBattery"
+  "category": "Twist Slim Battery"
 },
 
 {
   "id": 3,
   "name": "MYMY SLIM PEN TWIST BATTERY + SMART USB - BLUE MOON",
+  "name1":"MYMY TWIST SLIM PEN BATTERY",
+  "name2":"WITH SMART SENSE USB ADAPTOR",
+  "name3":"BLUE MOON",
   "price": 20.00,
   "salePrice": 11.99,
   "discount": 46,
@@ -105,11 +114,14 @@
   "brand": "MyMy",
   "newPro": true,
   "sale": true,
-  "category": "SlimPenBattery"
+  "category": "Twist Slim Battery"
 },
 {
   "id": 4,
   "name": "MYMY SLIM PEN TWIST BATTERY + SMART USB - SHINY CHROME",
+  "name1":"MYMY TWIST SLIM PEN BATTERY",
+  "name2":"WITH SMART SENSE USB ADAPTOR",
+  "name3":"SHINY CHROME",
   "price": 20.00,
   "salePrice": 11.99,
   "discount": 46,
@@ -141,11 +153,14 @@
   "brand": "MyMy",
   "newPro": true,
   "sale": true,
-  "category": "SlimPenBattery"
+  "category": "Twist Slim Battery"
 },
 {
   "id": 5,
   "name": "MYMY SLIM PEN TWIST BATTERY + SMART USB - RAINY RAINBOW",
+  "name1":"MYMY TWIST SLIM PEN BATTERY",
+  "name2":"WITH SMART SENSE USB ADAPTOR",
+  "name3":"RAINY RAINBOW",
   "price": 20.00,
   "salePrice": 11.99,
   "discount": 46,
@@ -177,6 +192,6 @@
   "brand": "MyMy",
   "newPro": true,
   "sale": true,
-  "category": "SlimPenBattery"
+  "category": "Twist Slim Battery"
 }
 ]
